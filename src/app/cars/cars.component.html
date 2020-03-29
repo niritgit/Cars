@@ -1,0 +1,33 @@
+
+  <div class="divCars">
+    <div style="width: 100%;height:100%">
+      <table>
+        <thead style="">
+          <tr class="trFilter">
+
+            <th colspan="3" class="thFilter">
+              <span class="spanFilter">Engine Type Filter:</span>
+              <select #enginetype (change)="setCarsByChangeEngineType(enginetype.value)">
+                <option *ngFor="let engineType of engineTypes">{{engineType.name}}</option>
+              </select>
+              <span style="width:30px;">&nbsp;</span>
+            </th>
+
+          </tr>
+          <tr class="titles">
+            <th>Plate number</th>
+            <th>Make &#38; Model</th>
+            <th>Engine Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let car of cars">
+            <td>{{car.plate}}</td>
+            <td>{{car.markerAndModel}}</td>
+            <td>{{car.engine}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+

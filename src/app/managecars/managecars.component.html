@@ -1,0 +1,43 @@
+<form #f="ngForm" (ngSubmit)="addCar(enginetype.value,platenum.value, carmodel.value)">
+  <table style="width:100%">
+    <tr>
+      <td><label>Engine Type:</label></td>
+      <td>
+        <div style="width:300px;">
+          <select (change)="engineTypeChange(enginetype.value)" #enginetype>
+
+            <option value="{{engineType.id}}" *ngFor="let engineType of engineTypes">{{engineType.name}}</option>
+          </select>
+          &nbsp;&nbsp;<span class="requiredErr" *ngIf="engineTypeFilter==0">*</span>
+        </div>
+        
+      </td>
+      
+    </tr>
+    <tr>
+      <td><label>Make &#38; Model:</label></td>
+      <td>
+        <select #carmodel><option value="{{carModel.id}}" *ngFor="let carModel of models">{{carModel.name}}</option></select>
+      </td>
+      
+    </tr>
+    <tr>
+      <td>
+        <label>Plate Number:</label>
+      </td>
+      <td>
+        <input type="text" class="platenum" #platenum name="platenum" [required] placeholder="Please select a number" />
+        &nbsp;&nbsp;<span class="requiredErr" *ngIf="!isValidPlatenum">*</span>
+      </td>
+     
+    </tr>
+  </table>
+
+  <div>
+    <input type="submit" style="text-align:center" value="Add Car" class="btn btn-primary" />&nbsp;
+    <span *ngIf="!isValidNewCar" class="requiredErr">Insert failed</span>
+   
+  </div>
+</form>
+<hr />
+<app-cars  [carFromParent]="newCar"></app-cars>

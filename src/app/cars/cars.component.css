@@ -1,0 +1,60 @@
+tr{
+    border: 1px solid #c0c0c0;
+}
+
+tbody{
+    height:250px;
+    width:100%;
+    overflow-y:auto;
+    overflow-x:hidden;
+    display:block;
+    
+}
+thead tr {
+  border-width: 1px;
+  background-color: gray;
+  color: white;
+}
+
+
+thead, tbody tr{
+    display:table;
+    width:100%;
+    table-layout: fixed;
+}
+
+.titles {
+  border-width: 1px;
+  background-color: gray;
+  color: white;
+}
+
+.thFilter {
+  text-align: right;
+  line-height: 40px;
+}
+
+.spanFilter {
+  padding-right: 20px;
+  font-weight: normal;
+  color: black;
+}
+
+table {
+  width: 100%;
+  align-self: center;
+  font-size: 16px;
+}
+
+.trFilter {
+  border-width: 1px;
+  background-color: darkgray !important;
+}
+
+.divCars {
+  text-align: center;
+  background-color: white
+}
+
+
+
